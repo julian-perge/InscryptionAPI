@@ -7,7 +7,7 @@ namespace APIPlugin
 {
 	public static class NewTalkingCard
 	{
-		private const string TalkingCardPortraitPrefab = "Prefabs/Cards/AnimatedPortraits/TalkingCardPortrait";
+		private const string PrefabTalkingCardPortraitPath = "Prefabs/Cards/AnimatedPortraits/TalkingCardPortrait";
 
 		public static readonly Dictionary<string, Type> TalkingCards = new();
 		public static readonly List<Type> Types = new(); // For easy access by CardTriggerHandler.GetType
@@ -33,7 +33,7 @@ namespace APIPlugin
 			float blinkRate = 3f
 		)
 		{
-			CharacterFace characterFace = ResourceBank.Get<CharacterFace>(TalkingCardPortraitPrefab);
+			CharacterFace characterFace = ResourceBank.Get<CharacterFace>(PrefabTalkingCardPortraitPath);
 			characterFace.eyes.blinkRate = blinkRate;
 			characterFace.emotionSprites = emotionSpritesList;
 			return characterFace.gameObject;
